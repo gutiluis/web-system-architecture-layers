@@ -44,4 +44,4 @@ errors.py is custom exceptions. centralize error types
 all responses are in json?
 
 
-clien POST /users -> app.py receives json -> services.py validates names/email, calls db -> models.py sql query -> db.py open db connection, commit -> db insert success and response goes back
+client POST /users -> app.py receives json -> services.py validates names/email, calls db -> models.py sql query -> db.py open db connection, commit -> db insert success and response goes back
