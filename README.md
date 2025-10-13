@@ -67,4 +67,33 @@ services.py is business logic and processing. validation
 errors.py is custom exceptions. centralize error types
 
 
+Tips for Structuring Data Flow:
+Separate layers
+    Validation / Parsing
+    Business logic
+    Database access
+    Response formatting
+Centralize error handling
+    Flask / FastAPI allow global exception handlers.
+Use return types consistently
+    For API: always return a JSON object with status and data or error.
+Use context managers for all resources
+    DB connections, files, network sockets.
+Validate early, fail fast
+    Check input before processing or writing to DB.
+
+
 client POST /users -> app.py receives json -> services.py validates names/email, calls db -> models.py sql query -> db.py open db connection, commit -> db insert success and response goes back
+
+input -> validation and error handling -> processing -> storage -> output
+
+input/request
+validation and parsing
+business logic
+    services
+database layer
+error handling
+    try/except
+response/output
+    json
+initialization & context
