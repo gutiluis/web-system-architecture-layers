@@ -26,3 +26,45 @@
 
 # run flask server
 - python3 app.py
+
+----------------------------------------------------------------------------------------------------------
+Layers and services
+
+# what are layers?
+when are layers necessary:
+    multiple data sources
+    validate or transform data
+    reuse logic
+    maintainability and testing
+
+layered are isolated levels of responsability. which is safer...
+request -> validation -> logic -> database -> response
+
+layers:
+    router or controller. request
+    service. validate input and coordinate logic
+    model. talk to database
+    response. data back
+
+advantages of layers:
+    readibility and debug
+    reusable
+    test each layer independently
+    scalability
+
+
+data flow is layered. api -> service -> model -> db
+validation and model function calls hapens in the service layer: services.py
+database operations are inside a context manager. safe commit/rollback: db.py
+custom excpetions. handle errors cleanly at the api level
+global error handlers. consistent api responses
+
+
+app.py is flask main app. the api is here. it has routes, http requests, json responses, errors globally
+db.py is database connection and helper functions, commits
+models.py is data models, orm like functions, sql query
+services.py is business logic and processing. validation
+errors.py is custom exceptions. centralize error types
+
+
+client POST /users -> app.py receives json -> services.py validates names/email, calls db -> models.py sql query -> db.py open db connection, commit -> db insert success and response goes back
