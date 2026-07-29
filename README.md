@@ -1,7 +1,7 @@
 > [!WARNING]
 > CURRENTLY UNDER DEVELOPMENT
 
-# Layers in Services
+# Layers and Services
 
 ## How it works:
 
@@ -15,37 +15,37 @@ pip install flask
 
 ### Layers and services
 
-### How to build layers
-when are layers necessary:
-    multiple data sources
-    validate or transform data
-    reuse logic
-    maintainability and testing
+### Building layers
+Layers are necessary:
+    Multiple data sources
+    Validate or transform data
+    Reuse logic
+    Maintainability and testing
 
-layered are isolated levels of responsability. which is safer...
-request -> validation -> logic -> database -> response
+Layered are isolated levels of responsability. which is safer...
+Request -> validation -> logic -> database -> response
 
-layers:
-    router or controller. request
-    service. validate input and coordinate logic
-    model. talk to database
-    response. data back
+Layers:
+    Router or controller. request
+    Service. validate input and coordinate logic
+    Model. talk to database
+    Response. data back
 
-advantages of layers:
-    readibility and debug
-    reusable
-    test each layer independently
-    scalability
-
-
-data flow is layered. api -> service -> model -> db
-validation and model function calls hapens in the service layer: services.py
-database operations are inside a context manager. safe commit/rollback: db.py
-custom excpetions. handle errors cleanly at the api level
-global error handlers. consistent api responses
+Advantages of layers:
+    Readibility and debug
+    Reusable
+    Test each layer independently
+    Scalability
 
 
-app.py is flask main app. the api is here. it has routes, http requests, json responses, errors globally
+Data flow is layered. api -> service -> model -> db
+Validation and model function calls hapens in the service layer: services.py
+Database operations are inside a context manager. safe commit/rollback: db.py
+Custom excpetions. handle errors cleanly at the api level
+Global error handlers. consistent api responses
+
+
+app.py is flask main app. the API is here. it has routes, http requests, json responses, errors globally
 db.py is database connection and helper functions, commits
 models.py is data models, orm like functions, sql query
 services.py is business logic and processing. validation
@@ -116,6 +116,7 @@ python3 app.py
 
 - Python
 - Flask
+- sqlite3
 
 ---
 
