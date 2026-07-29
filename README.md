@@ -1,9 +1,14 @@
+
+## How it works:
+
 # to run:
 - python3 -m venv venv
 - source venv/bin/activate
 - pip install flask
 
+-----
 
+## Features:
 
 # initialize sqlite3 db in python repl
 - import sqlite3
@@ -97,3 +102,16 @@ error handling
 response/output
     json
 initialization & context
+
+#
+
+## Technologies Used:
+
+- Python
+- Flask
+
+------
+
+## 
+
+Clone repo:
