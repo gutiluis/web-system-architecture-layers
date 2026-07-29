@@ -1,41 +1,21 @@
+> [!WARNING]
+> CURRENTLY UNDER DEVELOPMENT
+
+# Layers in Services
 
 ## How it works:
 
-# to run:
-- python3 -m venv venv
-- source venv/bin/activate
-- pip install flask
+```
+python3 -m venv venv
+source venv/bin/activate
+pip install flask
+```
 
------
+---
 
-## Features:
+### Layers and services
 
-# initialize sqlite3 db in python repl
-- import sqlite3
-- on_disk_connection = sqlite3.connect("users.db")
-- execute_sql_statements_and_fetch_results_from_sql_queries_with_cursor = on_disk_connection.cursor()
-
-- execute_sql_statements_and_fech_results_from_sql_queries_with_cursor.execute("""
-- CREATE TABLE IF NOT EXISTS users (
--    id INTEGER PRIMARY KEY AUTOINCREMENT,
--    name TEXT NOT NULL,
--    email TEXT NOT NULL UNIQUE
-- )
-- """)
-- conn.commit()
-- conn.close()
-
-# python sqlite3 api reference
-# https://docs.python.org/3/library/sqlite3.html
-
-
-# run flask server
-- python3 app.py
-
-----------------------------------------------------------------------------------------------------------
-Layers and services
-
-# what are layers?
+### How to build layers
 when are layers necessary:
     multiple data sources
     validate or transform data
@@ -103,15 +83,54 @@ response/output
     json
 initialization & context
 
-#
+---
 
-## Technologies Used:
+## Features
+
+### initialize sqlite3 db in python repl
+- import sqlite3
+- on_disk_connection = sqlite3.connect("users.db")
+- execute_sql_statements_and_fetch_results_from_sql_queries_with_cursor = on_disk_connection.cursor()
+
+- execute_sql_statements_and_fech_results_from_sql_queries_with_cursor.execute("""
+- CREATE TABLE IF NOT EXISTS users (
+-    id INTEGER PRIMARY KEY AUTOINCREMENT,
+-    name TEXT NOT NULL,
+-    email TEXT NOT NULL UNIQUE
+- )
+- """)
+- conn.commit()
+- conn.close()
+
+### python sqlite3 api reference
+### https://docs.python.org/3/library/sqlite3.html
+
+
+### run flask server
+
+```
+python3 app.py
+```
+
+## Tech-Stack
 
 - Python
 - Flask
 
-------
+---
 
-## 
+## Contributing
 
-Clone repo:
+If you are interested in reporting/fixing issues and contributing directly to the code base, please see CONTRIBUTING.md for more information on what we're looking for and how to get started.
+
+---
+
+## Community
+
+Info on reporting bugs, getting help, finding third-party tools and sample apps, and more can be found on the Community page.
+
+---
+
+## Licenses
+
+[MIT LICENSE](LICENSE)
